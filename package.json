@@ -1,0 +1,24 @@
+{
+  "name": "tailwindcss-colorize",
+  "version": "0.1.0",
+  "description": "Tailwind CSS plugin to generate utility classes to colorize elements as demonstrated on https://codepen.io/sosuke/pen/Pjoqqp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philippbosch/tailwindcss-colorize.git"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "colorize"
+  ],
+  "author": "Philipp Bosch <hello@pb.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/philippbosch/tailwindcss-colorize/issues"
+  },
+  "homepage": "https://github.com/philippbosch/tailwindcss-colorize#readme"
+}
