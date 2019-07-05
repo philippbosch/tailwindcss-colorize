@@ -24,7 +24,7 @@ module.exports = function colorize({
     const result = solver.solve();
 
     utilities[`.colorize-${e(colorName)}`] = {
-      'filter': result.filter.split(': ')[1],
+      'filter': result.filter.split(': ')[1].replace(/;$/, ''),
     };
 
     utilities[`.blacken`] = {
