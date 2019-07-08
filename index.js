@@ -49,10 +49,8 @@ module.exports = function colorize({
     const hexColor = config(`theme.colors.${baseColor}[${weight}]`);
     let result;
     if (hexColor in cache) {
-      console.debug(`Result for ${hexColor} successfully found in cache`);
       result = cache[hexColor];
     } else {
-      console.debug(`Result for ${hexColor} NOT found in cache`);
       const rgbValues = hexToRgb(hexColor);
       const color = new Color(...rgbValues);
       const solver = new Solver(color);
