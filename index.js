@@ -2,17 +2,13 @@ const fs = require('fs');
 const path = require('path');
 const envPaths = require('env-paths');
 
-const {
-  Color,
-  Solver,
-  hexToRgb
-} = require('./utils');
+const { Color, Solver, hexToRgb } = require('./utils');
 
 const cacheDir = envPaths('tailwindcss-colorize').cache;
 const cacheFilePath = path.join(cacheDir, 'cache.json');
 
 if (!fs.existsSync(cacheDir)) {
-  fs.mkdirSync(cacheDir);
+  fs.mkdirSync(cacheDir, { recursive: true });
 }
 
 function readCache() {
@@ -30,12 +26,7 @@ function writeCache(data) {
   fs.writeFileSync(cacheFilePath, JSON.stringify(data), 'utf8');
 }
 
-
-module.exports = function colorize({
-  addUtilities,
-  config,
-  e
-}) {
+module.exports = function colorize({ addUtilities, config, e }) {
   const colorNames = config('theme.colorize', []);
   const variants = config('variants.colorize', []);
   const utilities = {};
@@ -60,11 +51,11 @@ module.exports = function colorize({
     }
 
     utilities[`.colorize-${e(colorName)}`] = {
-      'filter': result.filter.split(': ')[1].replace(/;$/, ''),
+      filter: result.filter.split(': ')[1].replace(/;$/, ''),
     };
 
     utilities[`.blacken`] = {
-      'filter': 'brightness(0) saturate(100%)'
+      filter: 'brightness(0) saturate(100%)',
     };
   });
 

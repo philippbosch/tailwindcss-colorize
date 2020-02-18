@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-colorize",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Tailwind CSS plugin to generate utility classes to colorize elements as demonstrated on https://codepen.io/sosuke/pen/Pjoqqp",
   "main": "index.js",
   "scripts": {
